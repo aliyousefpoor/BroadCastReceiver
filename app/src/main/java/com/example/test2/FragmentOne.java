@@ -23,15 +23,12 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 public class FragmentOne extends Fragment {
 
     private static final String TAG = "FragmentOne";
-    TextChangeListener listener;
+
     EditText editText;
     TextView textView, textView2;
     Button button;
 
 
-    public void setTextChangeOne(TextChangeListener listn1) {
-        listener = listn1;
-    }
 
     public void setTextOne(String param) {
         textView.setText(param);
@@ -85,7 +82,7 @@ public class FragmentOne extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-               // listener.onTextchangeOne(s.toString());
+
                 sendBroadCast(s.toString());
 
 
